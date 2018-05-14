@@ -11,6 +11,7 @@ export default class RefsForward extends React.Component {
     console.log(this.ref.current)
     this.form = this.ref.current
     const formData = new FormData(this.form)
+    console.log(formData)
   }
 
   render () {

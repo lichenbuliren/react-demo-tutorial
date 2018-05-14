@@ -22,7 +22,7 @@ class App extends Component {
                 <Route path="/demo/:path" render={({ match }) => {
                   let Component
                   let matchRouter
-                  routers.map(router => {
+                  routers.forEach(router => {
                     if (router.path === match.params.path) {
                       Component = router.component
                       matchRouter = router
