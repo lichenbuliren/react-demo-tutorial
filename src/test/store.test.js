@@ -2,6 +2,12 @@ import store from '../store'
 import { addTodo, deleteTodo, toggleTodo, setVisibilityFilter } from '../store/actionCreater'
 import { initState, ADD_TODO, DELETE_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTERS, VisibilityFilters } from '../store/actions'
 
+import { createStore, applyMiddleware } from 'redux'
+import { logger } from '../middleware'
+import todoApp from '../store/reducers'
+
+const storeWrap = createStore(todoApp, applyMiddleware(logger))
+
 const state = store.getState()
 const initTodos = initState.todos
 const initVisibilityFilter = initState.visibilityFilter
@@ -37,4 +43,13 @@ test('toggle todo status', () => {
   const firstTodo = initTodos[0]
   store.dispatch(toggleTodo(1))
   expect(store.getState().todos[0].completed).toBe(!firstTodo.completed)
+})
+
+test('test logger middleware', () => {
+  storeWrap.dispatch(addTodo('test logger middleware'))
+  expect(storeWrap.getState().todos).toEqual([...initTodos, {
+    id: initTodos.length + 1,
+    text: 'test logger middleware',
+    completed: false
+  }])
 })
