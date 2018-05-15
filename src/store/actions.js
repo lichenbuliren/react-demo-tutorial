@@ -1,7 +1,7 @@
 export const ADD_TODO = 'addTodo'
 export const DELETE_TODO = 'deleteTodo'
 export const TOGGLE_TODO = 'toggleTodo'
-export const SET_VISIBILITY_FILTERS = 'setVisibilityFilter'
+export const SET_VISIBILITY_FILTER = 'setVisibilityFilter'
 
 export const VisibilityFilters = {
   SHOW_ALL: 'showAll',

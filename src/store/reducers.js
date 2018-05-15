@@ -10,6 +10,7 @@ export default handleActions(
       [
         addTodo,
         (state, action) => ({
+          ...state,
           todos: [
             ...state.todos,
             {
@@ -23,12 +24,14 @@ export default handleActions(
       [
         deleteTodo,
         (state, action) => ({
+          ...state,
           todos: state.todos.filter(todo => todo.id !== action.payload.id)
         })
       ],
       [
         toggleTodo,
         (state, action) => ({
+          ...state,
           todos: state.todos.map(todo => {
             if (todo.id === action.payload.id) {
               return {
@@ -43,7 +46,8 @@ export default handleActions(
       [
         setVisibilityFilter,
         (state, action) => ({
-          visibilityFilter: action.payload.type
+          ...state,
+          visibilityFilter: action.payload.filter
         })
       ]
     ]
