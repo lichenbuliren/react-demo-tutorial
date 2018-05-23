@@ -8,7 +8,7 @@ export default props => {
         {routers.map(router => {
           return (
             <li key={router.path} className="sidebar-item">
-              <Link to={`/demo/${router.path}`}>{router.name}</Link>
+              <Link to={`${router.path}`}>{router.name}</Link>
             </li>
           )
         })}

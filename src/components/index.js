@@ -6,6 +6,8 @@ import Button from './Button'
 import RefsForward from './RefsForward'
 import Portals from './Portals'
 import ErrorBoundary from './ErrorBoundary'
+import RouterDemo, { ChildRoute1, ChildRoute2 } from './router-demo'
+import RouteWithSubRoutes from './RouteWithSubRoutes'
 
 export {
   Header,
@@ -15,5 +17,9 @@ export {
   Button,
   RefsForward,
   Portals,
-  ErrorBoundary
+  ErrorBoundary,
+  RouterDemo,
+  ChildRoute1,
+  ChildRoute2,
+  RouteWithSubRoutes
 }
