@@ -1,26 +1,26 @@
 import { LifeStyle, ContextSystem, RefsForward, Portals, ErrorBoundary, RouterDemo, ChildRoute1, ChildRoute2 } from './components'
 const routers = [{
-  path: '/demo/lifestyle',
+  path: 'lifestyle',
   component: LifeStyle,
   name: '生命周期'
 }, {
-  path: '/demo/context-system',
+  path: 'context-system',
   component: ContextSystem,
   name: '上下文系统'
 }, {
-  path: '/demo/refs-forward',
+  path: 'refs-forward',
   component: RefsForward,
   name: '转嫁 Refs'
 }, {
-  path: '/demo/portals',
+  path: 'portals',
   component: Portals,
   name: '传送门'
 }, {
-  path: '/demo/error-boundaries',
+  path: 'error-boundaries',
   component: ErrorBoundary,
   name: '错误边界'
 }, {
-  path: '/demo/router-demo',
+  path: 'router-demo',
   component: RouterDemo,
   name: '路由测试',
   routes: [{

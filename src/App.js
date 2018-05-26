@@ -20,10 +20,27 @@ class App extends Component {
                   <Link to="demo">demo</Link>
                 </p>
               )} />
-              <Route exact path="/demo" component={LifeStyle}></Route>
-              {routers.map((route, i) => {
-                return <RouteWithSubRoutes key={i} {...route} />
-              })}
+              <Route path="/demo/:path" render={({ match }) => {
+                let RouteComponent
+                let matchRouter
+                let result
+                routers.forEach(router => {
+                  if (router.path === match.params.path) {
+                    RouteComponent = router.component
+                    matchRouter = router
+                  }
+                })
+                
+                if (matchRouter) {
+                  result = (
+                    <React.Fragment>
+                      <h4>{matchRouter.name}</h4> 
+                      <RouteComponent routes={matchRouter.routes || [] } />
+                    </React.Fragment>
+                  )
+                }
+                return result || <p>Not Found</p>
+              }} />
             </div>
           </div>
         </div>
