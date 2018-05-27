@@ -5602,7 +5602,7 @@ react-router-dom@^4.2.2:
 
 react-router@^4.2.0:
   version "4.2.0"
-  resolved "http://r.tnpm.oa.com/react-router/download/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
+  resolved "http://registry.npm.taobao.org/react-router/download/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
   dependencies:
     history "^4.7.2"
     hoist-non-react-statics "^2.3.0"

@@ -1,14 +1,12 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
 
 export default route => {
-  console.log(route.path)
+  const TempComponent = route.component
+  const routeName = route.name
   return (
-    <Route
-      path={route.path}
-      render={props => {
-        return <route.component {...props} routes={route.routes} />
-      }}
-    />
+    <React.Fragment>
+      <h4>{routeName}</h4>
+      <TempComponent />
+    </React.Fragment>
   )
 }
