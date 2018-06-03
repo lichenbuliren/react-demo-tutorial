@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { Header, Sidebar, LifeStyle, RouteWithSubRoutes } from './components'
+import { Header, Sidebar, AsyncComponent } from './components'
 import routers from './routers'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+
+const AsyncLifeStyle = AsyncComponent(() => import('./components/LifeStyle'))
 
 class App extends Component {
   render() {
@@ -23,10 +25,13 @@ class App extends Component {
                   </p>
                 )} />
                 <Switch>
-                  <Route exact path="/demo" component={LifeStyle}/>
-                  {routers.map(router => {
-                    return <Route key={router.path} path={router.path} component={() => RouteWithSubRoutes(router)} />
-                  })}
+                  <Route exact path="/demo" component={AsyncLifeStyle}/>
+                  <Route path="/demo/lifeStyle" component={AsyncLifeStyle} />
+                  <Route path="/demo/context-system" component={AsyncComponent(() => import('./components/ContextSystem'))} />
+                  <Route path="/demo/refs-forward" component={AsyncComponent(() => import('./components/RefsForward'))} />
+                  <Route path="/demo/portals" component={AsyncComponent(() => import('./components/Portals'))} />
+                  <Route path="/demo/error-boundaries" component={AsyncComponent(() => import('./components/ErrorBoundary'))} />
+                  <Route path="/demo/router-demo" component={AsyncComponent(() => import('./components/router-demo'))} />
                 </Switch>
                 <Route render={() => <p>Not Found</p>}/>
               </Switch>
