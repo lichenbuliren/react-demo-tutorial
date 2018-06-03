@@ -9,7 +9,6 @@ const AsyncLifeStyle = AsyncComponent(() => import('./components/LifeStyle'))
 
 class App extends Component {
   render() {
-
     return (
       <Router>
         <div className="App">
@@ -32,6 +31,7 @@ class App extends Component {
                   <Route path="/demo/portals" component={AsyncComponent(() => import('./components/Portals'))} />
                   <Route path="/demo/error-boundaries" component={AsyncComponent(() => import('./components/ErrorBoundary'))} />
                   <Route path="/demo/router-demo" component={AsyncComponent(() => import('./components/router-demo'))} />
+                  <Route path="/demo/redux-form-demo" component={AsyncComponent(() => import('./components/redux-form-demo'))} />
                 </Switch>
                 <Route render={() => <p>Not Found</p>}/>
               </Switch>

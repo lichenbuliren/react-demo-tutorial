@@ -1,5 +1,3 @@
-import { AsyncComponent } from './components'
-
 const routers = [{
   path: '/demo/lifestyle',
   name: '生命周期'
@@ -18,6 +16,9 @@ const routers = [{
 }, {
   path: '/demo/router-demo',
   name: '路由测试'
+}, {
+  path: '/demo/redux-form-demo',
+  name: 'Redux Form 测试'
 }]
 
 export default routers
